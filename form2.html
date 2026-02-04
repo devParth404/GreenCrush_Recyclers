@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCrush Recyclers | Seller & Buyer</title>
+
+    <style>
+         :root {
+            --bg: #0b1215;
+            --card: #0e2f25;
+            --green: #38ef7d;
+            --cyan: #1fb6ff;
+            --text: #e8fff6;
+            --muted: #a6cfc0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI, sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, rgba(56, 239, 125, 0.18), transparent 40%), radial-gradient(circle at bottom, rgba(31, 182, 255, 0.18), transparent 40%), linear-gradient(135deg, #061a14, #0b1215);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* CARD */
+        
+        .card {
+            width: 980px;
+            height: 560px;
+            background: rgba(14, 47, 37, 0.6);
+            backdrop-filter: blur(14px);
+            border-radius: 28px;
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(31, 182, 255, 0.25);
+            box-shadow: 0 0 40px rgba(56, 239, 125, .25);
+        }
+        /* LEFT BIG IMAGE */
+        
+        .left {
+            width: 50%;
+            background: linear-gradient(rgba(6, 26, 20, 0.65), rgba(6, 26, 20, 0.85)), url("https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=900&q=80");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 35px;
+            color: var(--text);
+        }
+        
+        .left h2 {
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        /* GLOW DOTS */
+        
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(10px);
+            opacity: .6;
+        }
+        
+        .g1 {
+            width: 180px;
+            height: 180px;
+            top: 60px;
+            left: 40px;
+            background: var(--green);
+        }
+        
+        .g2 {
+            width: 120px;
+            height: 120px;
+            bottom: 70px;
+            right: 60px;
+            background: var(--cyan);
+        }
+        /* RIGHT */
+        
+        .right {
+            width: 50%;
+            background: rgba(11, 18, 21, .95);
+            padding: 45px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        
+        .tabs span {
+            color: var(--muted);
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .tabs .active {
+            color: var(--cyan);
+            border-bottom: 2px solid var(--cyan);
+            padding-bottom: 6px;
+        }
+        /* FORMS */
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .input {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(31, 182, 255, 0.3);
+            border-radius: 30px;
+            padding: 10px 16px;
+        }
+        
+        .input span {
+            color: var(--cyan);
+            margin-right: 8px;
+        }
+        
+        .input input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 13px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--green), var(--cyan));
+            font-weight: 600;
+            cursor: pointer;
+            color: #002015;
+        }
+        
+        button:hover {
+            box-shadow: 0 0 15px rgba(56, 239, 125, .7);
+        }
+        
+        .hide {
+            display: none;
+        }
+        /* MOBILE */
+        
+        @media(max-width:768px) {
+            .card {
+                flex-direction: column;
+                height: auto;
+                width: 95%;
+            }
+            .left {
+                width: 100%;
+                height: 220px;
+            }
+            .right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- LEFT IMAGE -->
+        <div class="left">
+            <h2>GREENCRUSH RECYCLERS</h2>
+            <p style="color:var(--muted);max-width:260px;margin-top:10px;">
+                Sustainable glass recycling & powder production for construction industry.
+            </p>
+
+            <div class="glow g1"></div>
+            <div class="glow g2"></div>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="right">
+
+            <div class="tabs">
+                <span id="sellerTab" class="active">SELLER</span>
+                <span id="buyerTab">BUYER</span>
+            </div>
+
+            <!-- SELLER FORM -->
+            <form id="sellerForm">
+
+                <div class="input"><span>👤</span><input id="sName" placeholder="Seller Name"></div>
+                <div class="input"><span>📱</span><input id="sPhone" placeholder="Mobile Number"></div>
+                <div class="input"><span>📍</span><input id="sLocation" placeholder="Pickup Location"></div>
+                <div class="input"><span>♻️</span><input id="sMaterial" placeholder="Material Type"></div>
+                <div class="input"><span>⚖️</span><input id="sWeight" placeholder="Approx Weight"></div>
+
+                <button type="button" onclick="sendSeller()">REQUEST PICKUP ON WHATSAPP</button>
+
+            </form>
+
+            <!-- BUYER FORM -->
+            <form id="buyerForm" class="hide">
+
+                <div class="input"><span>🏭</span><input id="bName" placeholder="Buyer / Company Name"></div>
+                <div class="input"><span>📱</span><input id="bPhone" placeholder="Contact Number"></div>
+                <div class="input"><span>🧪</span><input id="bMaterial" placeholder="Material Required"></div>
+                <div class="input"><span>⚖️</span><input id="bQty" placeholder="Quantity Required"></div>
+                <div class="input"><span>📍</span><input id="bLocation" placeholder="Delivery Location"></div>
+
+                <button type="button" onclick="sendBuyer()">SEND ORDER ON WHATSAPP</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        const sellerTab = document.getElementById("sellerTab");
+        const buyerTab = document.getElementById("buyerTab");
+        const sellerForm = document.getElementById("sellerForm");
+        const buyerForm = document.getElementById("buyerForm");
+
+        sellerTab.onclick = () => {
+            sellerTab.classList.add("active");
+            buyerTab.classList.remove("active");
+            sellerForm.classList.remove("hide");
+            buyerForm.classList.add("hide");
+        }
+
+        buyerTab.onclick = () => {
+            buyerTab.classList.add("active");
+            sellerTab.classList.remove("active");
+            buyerForm.classList.remove("hide");
+            sellerForm.classList.add("hide");
+        }
+
+        /* ORDER ID */
+        function generateID(type) {
+            return "GCR-" + type + "-" + Math.floor(100000 + Math.random() * 900000);
+        }
+
+        /* SELLER WHATSAPP */
+        function sendSeller() {
+            let id = generateID("S");
+
+            let msg =
+                `♻️ GreenCrush Pickup Request
+
+Order ID: ${id}
+
+Name: ${sName.value}
+Phone: ${sPhone.value}
+Location: ${sLocation.value}
+Material: ${sMaterial.value}
+Weight: ${sWeight.value}
+
+Please arrange pickup.`;
+
+            let url = "https://wa.me/917768836063?text=" + encodeURIComponent(msg);
+            window.open(url, "_blank");
+        }
+
+        /* BUYER WHATSAPP */
+        function sendBuyer() {
+            let id = generateID("B");
+
+            let msg =
+                `🏭 GreenCrush Material Order
+
+Order ID: ${id}
+
+Company/Name: ${bName.value}
+Phone: ${bPhone.value}
+Material: ${bMaterial.value}
+Quantity: ${bQty.value}
+Delivery Location: ${bLocation.value}
+
+Please contact for further process.`;
+
+            let url = "https://wa.me/917768836063?text=" + encodeURIComponent(msg);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
