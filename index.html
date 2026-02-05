@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCrush Recyclers</title>
-    <link rel="shortcut icon" href="logo2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo2.png">
 
     <style>
         * {
@@ -24,12 +24,12 @@
         }
         
         body {
-            padding-top: 75px;
             background: var(--dark);
             color: white;
+            padding-top: 75px;
             scroll-behavior: smooth;
         }
-        /* ===== NAVBAR ===== */
+        /* NAVBAR */
         
         .tcs-navbar {
             position: fixed;
@@ -39,11 +39,10 @@
             height: 75px;
             background: rgba(6, 26, 20, .97);
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 0 35px;
             z-index: 1000;
-            backdrop-filter: blur(8px);
         }
         
         .nav-left {
@@ -58,36 +57,18 @@
         
         .brand-text {
             color: var(--green);
-            font-size: 18px;
             font-weight: 600;
         }
         
         .nav-menu {
+            list-style: none;
             display: flex;
             gap: 30px;
-            list-style: none;
-            align-items: center;
         }
         
-        .nav-menu li a {
+        .nav-menu a {
             color: #eafff4;
             text-decoration: none;
-            position: relative;
-        }
-        
-        .nav-menu span::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--green), var(--cyan));
-            transition: .4s;
-        }
-        
-        .nav-menu li:hover span::after {
-            width: 100%;
         }
         
         .nav-right button {
@@ -96,32 +77,28 @@
             padding: 10px 18px;
             border-radius: 25px;
             font-weight: 600;
-            cursor: pointer;
         }
-        /* ===== HERO ===== */
+        /* HERO */
         
         .hero {
             min-height: 100vh;
+            padding: 0 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 8%;
             background: radial-gradient(circle, rgba(56, 239, 125, .2), rgba(0, 0, 0, .9)), url("https://res.cloudinary.com/dxar2t0kt/image/upload/v1769186631/Gemini_Generated_Image_50peqi50peqi50pe_pl8gir.png");
             background-size: cover;
-            background-position: center;
         }
         
         .hero h1 {
             font-size: 52px;
             max-width: 650px;
-            margin-bottom: 10px;
         }
         
         .hero p {
-            font-size: 18px;
-            max-width: 560px;
-            margin-bottom: 20px;
             color: var(--text);
+            max-width: 560px;
+            margin: 15px 0 25px;
         }
         
         .hero-buttons {
@@ -134,11 +111,9 @@
             width: 190px;
             padding: 14px;
             border-radius: 30px;
-            font-size: 16px;
             font-weight: 600;
-            text-align: center;
             text-decoration: none;
-            transition: .3s;
+            text-align: center;
         }
         
         .pickup-btn {
@@ -146,31 +121,26 @@
             color: black;
         }
         
-        .pickup-btn:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
-        
         .brochure-btn {
             border: 2px solid var(--green);
             color: var(--green);
         }
+        /* COMMON SECTION */
         
-        .brochure-btn:hover {
-            background: linear-gradient(135deg, var(--green), var(--cyan));
-            color: black;
-        }
-        /* ===== PRODUCTS ===== */
-        
-        #products {
-            background: #02150f;
+        section {
             padding: 90px 8%;
         }
         
-        .products-title {
+        .title {
             text-align: center;
             font-size: 36px;
             color: var(--green);
             margin-bottom: 50px;
+        }
+        /* PRODUCTS */
+        
+        #products {
+            background: #02150f;
         }
         
         .products-grid {
@@ -184,13 +154,6 @@
             padding: 25px;
             border-radius: 22px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
-            transition: .4s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px rgba(56, 239, 125, .6);
         }
         
         .product-card img {
@@ -198,31 +161,21 @@
             height: 180px;
             object-fit: cover;
             border-radius: 15px;
-            margin-bottom: 15px;
         }
         
         .product-card h3 {
             color: var(--green);
-            margin-bottom: 8px;
+            margin: 10px 0;
         }
         
         .product-card p {
             color: var(--text);
             font-size: 14px;
-            line-height: 1.6;
         }
-        /* ===== PROGRESS ===== */
+        /* PROGRESS */
         
         #progress {
             background: #041e17;
-            padding: 90px 8%;
-        }
-        
-        .progress-title {
-            text-align: center;
-            font-size: 36px;
-            color: var(--green);
-            margin-bottom: 50px;
         }
         
         .progress-grid {
@@ -232,42 +185,20 @@
         }
         
         .progress-card {
-            background: rgba(11, 46, 34, .65);
-            backdrop-filter: blur(12px);
-            border-radius: 22px;
+            background: rgba(11, 46, 34, .7);
             padding: 35px;
+            border-radius: 22px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
-            transition: .4s;
-        }
-        
-        .progress-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 30px rgba(56, 239, 125, .7);
         }
         
         .progress-card h2 {
             font-size: 42px;
             color: var(--cyan);
-            margin-bottom: 8px;
         }
-        
-        .progress-card p {
-            color: var(--text);
-            font-size: 15px;
-        }
-        /* ===== HOW WE WORK ===== */
+        /* HOW WE WORK */
         
         #process {
             background: #02150f;
-            padding: 90px 8%;
-        }
-        
-        .process-title {
-            text-align: center;
-            font-size: 36px;
-            color: var(--green);
-            margin-bottom: 50px;
         }
         
         .process-grid {
@@ -280,14 +211,6 @@
             background: var(--card);
             padding: 30px;
             border-radius: 22px;
-            text-align: left;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
-            transition: .4s;
-        }
-        
-        .process-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px rgba(56, 239, 125, .6);
         }
         
         .process-card h3 {
@@ -300,46 +223,31 @@
             font-size: 14px;
             line-height: 1.7;
         }
-        /* ===== ABOUT ===== */
+        /* ABOUT */
         
         #about {
-            padding: 90px 8%;
             background: #041e17;
         }
         
         .about-box {
+            max-width: 1150px;
+            margin: auto;
             display: flex;
             gap: 40px;
-            align-items: center;
             background: rgba(0, 0, 0, .5);
             padding: 40px;
             border-radius: 25px;
-            backdrop-filter: blur(12px);
-            max-width: 1150px;
-            margin: auto;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            color: var(--green);
-            margin-bottom: 12px;
-            font-size: 30px;
         }
         
         .about-text p {
             color: var(--text);
             line-height: 1.8;
-            font-size: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .about-text h4 {
             color: var(--cyan);
-            margin-top: 12px;
-            margin-bottom: 5px;
+            margin-top: 10px;
         }
         
         .about-text ul {
@@ -349,7 +257,6 @@
         .about-text li {
             color: #c9ffee;
             margin-bottom: 6px;
-            font-size: 14px;
         }
         
         .about-img {
@@ -357,7 +264,6 @@
             height: 300px;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
         }
         
         .about-img img {
@@ -365,38 +271,19 @@
             height: 100%;
             object-fit: cover;
         }
-        
-        @media(max-width:850px) {
-            .about-box {
-                flex-direction: column;
-            }
-            .about-img {
-                height: 220px;
-            }
-        }
-        /* ===== TEAM ===== */
+        /* TEAM */
         
         #team {
             background: #041e17;
-            padding: 90px 8%;
-        }
-        
-        .leadership-title {
-            text-align: center;
-            font-size: 36px;
-            color: var(--green);
-            margin-bottom: 60px;
         }
         
         .leader-card {
             display: flex;
-            align-items: center;
             gap: 35px;
-            margin-bottom: 70px;
             background: var(--card);
             border-radius: 25px;
+            margin-bottom: 60px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .7);
         }
         
         .leader-card.reverse {
@@ -405,7 +292,7 @@
         
         .leader-img {
             flex: 1;
-            min-height: 320px;
+            min-height: 300px;
         }
         
         .leader-img img {
@@ -420,13 +307,11 @@
         }
         
         .leader-info h3 {
-            font-size: 26px;
             color: var(--green);
         }
         
         .leader-info h4 {
             color: var(--cyan);
-            margin-bottom: 8px;
         }
         
         .leader-info ul {
@@ -439,25 +324,10 @@
             font-size: 14px;
             margin-bottom: 6px;
         }
-        
-        @media(max-width:850px) {
-            .leader-card,
-            .leader-card.reverse {
-                flex-direction: column;
-            }
-        }
-        /* ===== GLIMPSES ===== */
+        /* GLIMPSES */
         
         #glimpses {
             background: #02150f;
-            padding: 80px 8%;
-        }
-        
-        .glimpses-title {
-            text-align: center;
-            font-size: 36px;
-            color: var(--green);
-            margin-bottom: 45px;
         }
         
         .glimpses-grid {
@@ -471,36 +341,27 @@
             height: 200px;
             object-fit: cover;
             border-radius: 18px;
-            transition: .4s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
         }
-        
-        .glimpses-grid img:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 25px rgba(56, 239, 125, .7);
-        }
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         
         .footer {
-            background: rgba(6, 26, 20, .98);
+            background: #061a14;
             padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid rgba(56, 239, 125, .4);
         }
         
         .footer h3 {
             color: var(--green);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .footer-details {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
-            color: var(--text);
+            flex-wrap: wrap;
         }
-        /* ===== WHATSAPP ===== */
+        /* WHATSAPP */
         
         .whatsapp-float {
             position: fixed;
@@ -513,12 +374,39 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .6);
-            z-index: 2000;
         }
+        /* RESPONSIVE */
         
-        .whatsapp-float img {
-            width: 35px;
+        @media(max-width:768px) {
+            body {
+                padding-top: 65px;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .hero {
+                padding: 40px 6%;
+                min-height: auto;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            .about-box {
+                flex-direction: column;
+            }
+            .leader-card,
+            .leader-card.reverse {
+                flex-direction: column;
+            }
+            .footer-details {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -532,12 +420,12 @@
             <span class="brand-text">GreenCrush Recyclers</span>
         </div>
         <ul class="nav-menu">
-            <li><a href="#"><span>Home</span></a></li>
-            <li><a href="#products"><span>Products</span></a></li>
-            <li><a href="#process"><span>How We Work</span></a></li>
-            <li><a href="#about"><span>About Us</span></a></li>
-            <li><a href="#team"><span>Leadership</span></a></li>
-            <li><a href="#glimpses"><span>Glimpses</span></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Leadership</a></li>
+            <li><a href="#glimpses">Glimpses</a></li>
         </ul>
         <div class="nav-right"><button>Apply Now</button></div>
     </div>
@@ -545,7 +433,7 @@
     <!-- HERO -->
     <div class="hero">
         <h1>Turn Waste Glass Into Cash</h1>
-        <p>We collect glass bottles and recycle them into valuable industrial materials.</p>
+        <p>We collect waste glass and transform it into high-quality recycled raw materials for industries.</p>
         <div class="hero-buttons">
             <a href="form2.html" class="btn pickup-btn">Buy Or Sell</a>
             <a href="#" class="btn brochure-btn">View Brochure</a>
@@ -554,44 +442,41 @@
 
     <!-- PRODUCTS -->
     <section id="products">
-        <h2 class="products-title">Our Products</h2>
+        <h2 class="title">Our Products</h2>
         <div class="products-grid">
-            <div class="product-card">
-                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185514/OIP_yyfdby.webp">
+            <div class="product-card"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185514/OIP_yyfdby.webp">
                 <h3>Glass Chips</h3>
-                <p>Crushed glass used in road construction and manufacturing.</p>
+                <p>Used in road construction, drainage layers and manufacturing.</p>
             </div>
-            <div class="product-card">
-                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185551/OIP_1_g4jjrc.webp">
+            <div class="product-card"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185551/OIP_1_g4jjrc.webp">
                 <h3>20mm Powder</h3>
-                <p>Used in road construction, Landscaping and Decoration, Blasing etc. </p>
+                <p>Ideal for landscaping, blasting and decorative construction.</p>
             </div>
-            <div class="product-card">
-                <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185593/download_mwszjr.webp">
+            <div class="product-card"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185593/download_mwszjr.webp">
                 <h3>100mm Powder</h3>
-                <p>Fine powder suitable for bricks, cement and tiles.</p>
+                <p>Used in cement, bricks, tiles and industrial applications.</p>
             </div>
         </div>
     </section>
 
     <!-- PROGRESS -->
     <section id="progress">
-        <h2 class="progress-title">Company Progress</h2>
+        <h2 class="title">Company Progress</h2>
         <div class="progress-grid">
             <div class="progress-card">
-                <h2>120+</h2>
+                <h2>1+</h2>
                 <p>Orders Completed</p>
             </div>
             <div class="progress-card">
-                <h2>45+</h2>
-                <p>Tons Recycled</p>
+                <h2>100+</h2>
+                <p>Kg Recycled</p>
             </div>
             <div class="progress-card">
-                <h2>30+</h2>
+                <h2>1+</h2>
                 <p>Active Clients</p>
             </div>
             <div class="progress-card">
-                <h2>5+</h2>
+                <h2>2+</h2>
                 <p>Cities Covered</p>
             </div>
         </div>
@@ -599,31 +484,31 @@
 
     <!-- HOW WE WORK -->
     <section id="process">
-        <h2 class="process-title">How We Work</h2>
+        <h2 class="title">How We Work</h2>
         <div class="process-grid">
             <div class="process-card">
-                <h3>1. Pickup Request & Scheduling</h3>
-                <p>Customers contact us via call or WhatsApp. Our team confirms location, quantity and schedules a convenient pickup time.</p>
+                <h3>Pickup Request</h3>
+                <p>Customers contact us via WhatsApp or call. We collect details such as location, quantity and schedule pickup.</p>
             </div>
             <div class="process-card">
-                <h3>2. On-Site Collection</h3>
-                <p>Our trained staff visits your location with proper safety equipment and collects glass bottles carefully.</p>
+                <h3>On-Site Collection</h3>
+                <p>Our trained team collects glass using safety equipment ensuring zero damage or spillage.</p>
             </div>
             <div class="process-card">
-                <h3>3. Sorting & Quality Check</h3>
-                <p>Collected glass is separated by type and color. Contaminated material is removed to ensure quality output.</p>
+                <h3>Sorting & Quality Check</h3>
+                <p>Glass is sorted by color and type. Contaminated material is removed.</p>
             </div>
             <div class="process-card">
-                <h3>4. Crushing & Processing</h3>
-                <p>Bottles are crushed into chips or fine powder using industrial machines under controlled conditions.</p>
+                <h3>Crushing & Processing</h3>
+                <p>Glass is crushed into chips or powder using industrial machines.</p>
             </div>
             <div class="process-card">
-                <h3>5. Storage & Inventory</h3>
-                <p>Processed materials are stored in secure sacks and warehouses with proper batch labeling.</p>
+                <h3>Storage & Inventory</h3>
+                <p>Processed material is stored batch-wise with proper labeling.</p>
             </div>
             <div class="process-card">
-                <h3>6. Supply to Industries</h3>
-                <p>Glass products are supplied to construction, cement, brick and manufacturing industries.</p>
+                <h3>Supply to Industries</h3>
+                <p>Recycled products are supplied to construction and manufacturing units.</p>
             </div>
         </div>
     </section>
@@ -632,21 +517,17 @@
     <section id="about">
         <div class="about-box">
             <div class="about-text">
-                <h2>About GreenCrush Recyclers</h2>
-                <p>GreenCrush Recyclers is a Nagpur-based startup focused on sustainable glass recycling. We work with households, shops, hotels and industries to collect waste glass and convert it into reusable raw materials.</p>
-                <p>Our recycling process helps reduce landfill waste, saves natural resources and supports circular economy practices. We believe waste is not useless — it is a valuable resource when managed responsibly.</p>
-                <p>With modern machinery, trained staff and a growing logistics network, we ensure safe collection, proper processing and timely supply to industries that reuse recycled glass.</p>
-
-                <h4>🎯 Our Vision</h4>
-                <p>To become Central India’s leading eco-friendly glass recycling solution provider and create a cleaner, greener future.</p>
-
-                <h4>🚀 Our Mission</h4>
+                <h2 class="title">About GreenCrush Recyclers</h2>
+                <p>GreenCrush Recyclers is a Nagpur-based startup focused on sustainable glass recycling. We partner with households, hotels, shops and industries.</p>
+                <p>Our mission is to reduce landfill waste, conserve natural resources and support the circular economy.</p>
+                <h4>Vision</h4>
+                <p>To become Central India’s most trusted eco-friendly glass recycling company.</p>
+                <h4>Mission</h4>
                 <ul>
-                    <li>Reduce glass waste going to landfills</li>
-                    <li>Provide reliable and fast pickup services</li>
-                    <li>Maintain high-quality recycled products</li>
-                    <li>Support construction & manufacturing industries</li>
-                    <li>Promote environmental awareness in communities</li>
+                    <li>Reduce glass waste in landfills</li>
+                    <li>Provide fast & reliable pickup services</li>
+                    <li>Maintain high-quality recycled output</li>
+                    <li>Support industrial sustainability</li>
                 </ul>
             </div>
             <div class="about-img">
@@ -657,7 +538,7 @@
 
     <!-- TEAM -->
     <section id="team">
-        <h2 class="leadership-title">Our Leadership</h2>
+        <h2 class="title">Our Leadership</h2>
 
         <div class="leader-card">
             <div class="leader-img"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185734/Screenshot_2026-01-20_231759_io6stz.png"></div>
@@ -665,35 +546,35 @@
                 <h3>Parth Mehatre</h3>
                 <h4>Founder</h4>
                 <ul>
-                    <li>Founded GreenCrush with focus on sustainability</li>
+                    <li>Founded GreenCrush with sustainability vision</li>
                     <li>Leads technology & process optimization</li>
-                    <li>Developed collection network across Nagpur</li>
+                    <li>Built Yavatmal collection network</li>
                 </ul>
             </div>
         </div>
 
         <div class="leader-card reverse">
-            <div class="leader-img"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185751/Screenshot_2026-01-20_231847_upduf4.png"></div>
+            <div class="leader-img"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1770310796/Screenshot_2026-02-05_222646_h73a9r.png"></div>
             <div class="leader-info">
-                <h3>Prathmesh Bhingewar</h3>
+                <h3>Vaishnav Thokal</h3>
                 <h4>Co-Founder & Operations Head</h4>
                 <ul>
-                    <li>Manages daily plant operations</li>
-                    <li>Oversees logistics & pickup teams</li>
-                    <li>Ensures quality control of materials</li>
+                    <li>Manages plant operations</li>
+                    <li>Supervises logistics & pickups</li>
+                    <li>Ensures quality control</li>
                 </ul>
             </div>
         </div>
 
         <div class="leader-card">
-            <div class="leader-img"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185762/Screenshot_2026-01-21_125854_cye2kp.png"></div>
+            <div class="leader-img"><img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185751/Screenshot_2026-01-20_231847_upduf4.png"></div>
             <div class="leader-info">
-                <h3>Samruddhi Makode</h3>
+                <h3>Prathmesh Bhingewar</h3>
                 <h4>Chief Executive Officer</h4>
                 <ul>
-                    <li>Handles business partnerships</li>
-                    <li>Develops growth strategies</li>
-                    <li>Coordinates with industrial buyers</li>
+                    <li>Drives company growth strategies</li>
+                    <li>Handles partnerships & clients</li>
+                    <li>Coordinates industrial buyers</li>
                 </ul>
             </div>
         </div>
@@ -701,7 +582,7 @@
 
     <!-- GLIMPSES -->
     <section id="glimpses">
-        <h2 class="glimpses-title">Company Glimpses</h2>
+        <h2 class="title">Company Glimpses</h2>
         <div class="glimpses-grid">
             <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769186355/Screenshot_2026-01-23_220559_ocqfqz.png">
             <img src="https://res.cloudinary.com/dxar2t0kt/image/upload/v1769185691/Gemini_Generated_Image_8tzaob8tzaob8tza_hjouig.png">
@@ -716,18 +597,19 @@
         <div class="footer-details">
             <div>📞 +91 7768836063</div>
             <div>📧 greencrush.recyclers@gmail.com</div>
-            <div>📍 Nagpur, Maharashtra</div>
+            <div>📍 Yavatmal, Maharashtra</div>
+
         </div>
     </div>
 
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/917768836063" target="_blank" class="whatsapp-float">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    <a href="https://wa.me/917768836063" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
     </a>
 
 </body>
 
 </html>
+
 
 
 
